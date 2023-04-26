@@ -1,2 +1,2 @@
 # FlightHub
-React application to loaf flight information and filter flight details
+React application to load flight information and filter flight details
