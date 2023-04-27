@@ -1,0 +1,57 @@
+{
+    "flightDetails": [
+        {
+            "uuid": "",
+            "origin": "FRA",
+            "destination": "FAE",
+            "departureDate": "2023-04-30",
+            "returnDate": "2023-04-30",
+            "seatAvailability":"31",
+            "price": {
+                "amount": "200.15",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        },
+        {
+            "uuid": "",
+            "origin": "FRA",
+            "destination": "FLR",
+            "departureDate": "2023-04-30",
+            "returnDate": "2023-04-30",
+            "seatAvailability":"15",
+            "price": {
+                "amount": "150",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        },
+        {
+            "uuid": "",
+            "origin": "FRA",
+            "destination": "FUK",
+            "departureDate": "2023-04-30",
+            "returnDate": "2023-04-30",
+            "seatAvailability":"15",
+            "price": {
+                "amount": "400",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        },
+        {
+            "uuid": "",
+            "origin": "FRA",
+            "destination": "FRO",
+            "departureDate": "2023-04-30",
+            "returnDate": "2023-04-30",
+            "seatAvailability":"15",
+            "price": {
+                "amount": "500",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        }
+        
+    ]
+}
