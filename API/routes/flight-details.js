@@ -8,10 +8,10 @@ const flightDetailsRoute = (app, fs) => {
       if (err) {
         throw err;
       }
-      let flightData = JSON.parse(data);
-      flightData.flightDetails.forEach((each) => (each.uuid = randomUUID()));
+      let { flightDetails } = JSON.parse(data);
+      flightDetails.forEach((each) => (each.uuid = randomUUID()));
       res.setHeader("Content-Type", "application/json");
-      res.send(flightData);
+      res.send(flightDetails);
     });
   });
 };
