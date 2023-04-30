@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { styled as Mstyled } from "@mui/system";
 
 export const IternaryContainer = styled("div")`
   display: flex;
@@ -7,12 +8,23 @@ export const IternaryContainer = styled("div")`
   justify-content: space-between;
 `;
 
-export const Section = styled("div")`
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-  align-items: center;
-`;
+export const Section = Mstyled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: "0.25rem",
+  alignItems: "center",
+  [theme.breakpoints.up("md")]: {
+    width: "9.375rem",
+  },
+}));
+// export const Section = styled("div")`
+//   display: flex;
+//   flex-direction: row;
+//   gap: 0.25rem;
+//   align-items: center;
+//   width: 9.375rem;
+
+// `;
 
 export const ItineraryCode = styled("div")<{ type?: string }>`
   ${(props) =>
@@ -23,7 +35,12 @@ export const ItineraryCode = styled("div")<{ type?: string }>`
     `}
 `;
 
-export const OfferPrice = styled("div")``;
+export const OfferPrice = styled("div")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+`;
 
 export const Price = styled("div")``;
 
@@ -39,4 +56,13 @@ export const JourneyRouteBlock = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`;
+
+export const Test = styled('div')`
+  
+
+`;
+export const AnotherTest = styled('div')`
+  
+
 `;

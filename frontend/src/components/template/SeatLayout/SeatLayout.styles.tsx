@@ -7,6 +7,7 @@ export const FlightSeat = styled("div")`
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+  align-items: center;
 `;
 
 export const Icon = styled("div")`

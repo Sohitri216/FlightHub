@@ -6,28 +6,6 @@ export const JourneyDetailsWrapper = styled("div")`
   gap: 0.5rem;
 `;
 
-export const JourneyDetails = styled("div")`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: calc(50% - 1rem);
-
-  //ToDo: Take a look;
-  /* background-color: #fff;
-  padding: 1rem; */
-`;
-export const Section = styled("div")`
-  display: flex;
-  flex-direction: row;
-  gap: 0.25rem;
-`;
-
-// export const JourneyWrapper = styled("div")`
-//   font-size: 0.875rem;
-//   display: grid;
-//   grid-gap: 1rem;
-//   grid-template-columns: repeat(3, 1fr);
-// `;
 
 export const JourneyWrapper = styled("div")`
   font-size: 0.875rem;
@@ -38,11 +16,7 @@ export const JourneyWrapper = styled("div")`
   justify-content: space-between;
 `;
 
-export const Label = styled("div")``;
-export const HeadingLabel = styled("div")`
-  color: #555;
-  font-weight: bold;
-`;
+
 
 export const FlightSeat = styled("div")`
   font-weight: 600;

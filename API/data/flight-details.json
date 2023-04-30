@@ -15,7 +15,7 @@
         },
         {
             "uuid": "",
-            "origin": "FRA",
+            "origin": "DTM",
             "destination": "FLR",
             "departureDate": "2023-08-16",
             "returnDate": "2023-08-30",
@@ -32,7 +32,7 @@
             "destination": "FUK",
             "departureDate": "2023-08-15",
             "returnDate": "2023-08-30",
-            "seatAvailability": "15",
+            "seatAvailability": "8",
             "price": {
                 "amount": "400",
                 "currency": "EUR"
@@ -41,13 +41,39 @@
         },
         {
             "uuid": "",
-            "origin": "DTM",
-            "destination": "FRO",
+            "origin": "DUB",
+            "destination": "DUD",
             "departureDate": "2023-08-15",
             "returnDate": "2023-08-30",
-            "seatAvailability": "15",
+            "seatAvailability": "26",
             "price": {
                 "amount": "500",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        },
+        {
+            "uuid": "",
+            "origin": "DUD",
+            "destination": "DUJ",
+            "departureDate": "2023-08-15",
+            "returnDate": "2023-08-30",
+            "seatAvailability": "19",
+            "price": {
+                "amount": "500",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        },
+        {
+            "uuid": "",
+            "origin": "FRA",
+            "destination": "DTM",
+            "departureDate": "2023-08-15",
+            "returnDate": "2023-08-30",
+            "seatAvailability": "114",
+            "price": {
+                "amount": "40",
                 "currency": "EUR"
             },
             "offerType": "BestPrice"

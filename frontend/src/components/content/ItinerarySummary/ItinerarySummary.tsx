@@ -16,7 +16,7 @@ export const ItinerarySummary = ({
     return breakpoint === "lg" || breakpoint === "xlg" ? (
       <S.JourneyRouteBlock>
         <S.ItineraryCode>{iataCode}</S.ItineraryCode>
-        <S.ItineraryCode type="airport">({airport})</S.ItineraryCode>
+        <S.ItineraryCode type="airport">( {airport} )</S.ItineraryCode>
       </S.JourneyRouteBlock>
     ) : (
       <S.Section>
@@ -41,13 +41,11 @@ export const ItinerarySummary = ({
           airport={returnAirport}
         />
       </S.Section>
-
       {(breakpoint === "lg" || breakpoint === "xlg") && (
         <S.Section>
           <SeatLayout availableSeatCount={availableSeatCount} />
         </S.Section>
       )}
-
       <S.OfferPrice>
         <S.Price>{price}</S.Price>
         <S.Offer>{offerType} offer</S.Offer>
