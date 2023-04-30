@@ -6,3 +6,8 @@ export const LayoutContainer = styled("div")`
   gap: 1rem;
   padding: 1rem;
 `;
+
+export const FlightListingContainer = styled("div")`
+  margin-left: -1rem;
+  margin-right: -1rem;
+`;

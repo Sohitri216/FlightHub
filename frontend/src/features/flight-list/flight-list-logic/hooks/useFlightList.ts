@@ -3,11 +3,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   FlightParamProps,
-  FlightDetails,
   FlightInventoryList,
   ErrorData,
   FlightInventoryData,
-} from "../types/types";
+  FlightIntenary,
+} from "../../../../types/types";
 export const useFlightList = ({
   origin,
   dest,
@@ -16,7 +16,7 @@ export const useFlightList = ({
   service,
 }: FlightParamProps): FlightInventoryData => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [response, setResponse] = useState<FlightDetails[]>([]);
+  const [response, setResponse] = useState<FlightIntenary[]>([]);
   const [error, setError] = useState<ErrorData>();
 
   const baseConfig: Params = {

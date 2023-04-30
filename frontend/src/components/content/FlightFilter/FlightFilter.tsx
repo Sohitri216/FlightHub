@@ -1,3 +1,3 @@
 export const FlightFilter = () => {
-  return <>I am the filter section</>;
+  return <>Filter Section</>;
 };
