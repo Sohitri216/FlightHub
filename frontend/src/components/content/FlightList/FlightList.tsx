@@ -2,7 +2,7 @@ import { Accordion } from "../../base";
 import { FlightDetailsType } from "../../../types/types";
 import * as S from "./FlightList.styles";
 
-import { formatCurrency, formatText } from "../../../common/util/formatItem";
+import { formatCurrency, formatText } from "../../../common/util";
 import { ItenaryDetails } from "../IternaryDetails/ItenaryDetails";
 import { ItenarySummary } from "../ItenarySummary/ItenarySummary";
 
@@ -14,7 +14,7 @@ export const FlightDetails = ({ flightList }: Props) => {
           uuid,
           price,
           depatureDetails,
-          arrivalDetails,
+          returnDetails,
           offerType,
           seatAvailability,
         }: FlightDetailsType) => (
@@ -23,7 +23,7 @@ export const FlightDetails = ({ flightList }: Props) => {
               summary={
                 <ItenarySummary
                   depatureDetails={depatureDetails}
-                  arrivalDetails={arrivalDetails}
+                  returnDetails={returnDetails}
                   price={formatCurrency(price)}
                   offerType={formatText(offerType)}
                   availableSeatCount={seatAvailability}
@@ -32,7 +32,7 @@ export const FlightDetails = ({ flightList }: Props) => {
               details={
                 <ItenaryDetails
                   depatureDetails={depatureDetails}
-                  arrivalDetails={arrivalDetails}
+                  returnDetails={returnDetails}
                   availableSeatCount={seatAvailability}
                 />
               }

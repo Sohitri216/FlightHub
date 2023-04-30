@@ -15,11 +15,11 @@ export const ItenaryDetails = ({
     iataCode: departureIata,
     date: departureDate,
   },
-  arrivalDetails: {
-    airport: arrivalAirport,
-    country: arrivalCountry,
-    iataCode: arrivalIata,
-    date: arrivalDate,
+  returnDetails: {
+    airport: returnAirport,
+    country: returnCountry,
+    iataCode: returnIata,
+    date: returnDate,
   },
 }: JourneyType) => {
   const breakpoint = useBreakpoint();
@@ -47,20 +47,20 @@ export const ItenaryDetails = ({
           </S.Section>
         </S.JourneyDetails>
         <S.JourneyDetails>
-          <S.HeadingLabel>Arrival</S.HeadingLabel>
+          <S.HeadingLabel>Return</S.HeadingLabel>
           <S.Section>
             <CalendarMonth />
-            <S.Label>{arrivalDate}</S.Label>
+            <S.Label>{returnDate}</S.Label>
           </S.Section>
           <S.Section>
             <Flight />
             <S.Label>
-              {arrivalAirport} ({arrivalIata})
+              {returnAirport} ({returnIata})
             </S.Label>
           </S.Section>
           <S.Section>
             <Public />
-            <S.Label>{arrivalCountry}</S.Label>
+            <S.Label>{returnCountry}</S.Label>
           </S.Section>
         </S.JourneyDetails>
       </S.JourneyWrapper>
@@ -77,6 +77,6 @@ type JourneyDetais = {
 
 type JourneyType = {
   depatureDetails: JourneyDetais;
-  arrivalDetails: JourneyDetais;
+  returnDetails: JourneyDetais;
   availableSeatCount: string;
 };

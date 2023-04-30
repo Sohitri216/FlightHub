@@ -5,7 +5,7 @@ import * as S from "./ItenarySummary.styles";
 
 export const ItenarySummary = ({
   depatureDetails: { iataCode: departureIataCode, airport: departureAirport },
-  arrivalDetails: { iataCode: arrivalIataCode, airport: arrivalAirport },
+  returnDetails: { iataCode: returnIataCode, airport: returnAirport },
   availableSeatCount,
   price,
   offerType,
@@ -37,8 +37,8 @@ export const ItenarySummary = ({
       <S.Section>
         <FlightTakeoff style={{ transform: "scale(-1,1" }} />
         <DisplayJourneyRoute
-          iataCode={arrivalIataCode}
-          airport={arrivalAirport}
+          iataCode={returnIataCode}
+          airport={returnAirport}
         />
       </S.Section>
       <S.Section>
@@ -62,7 +62,7 @@ type JourneyDetais = {
 
 type ItenaryType = {
   depatureDetails: JourneyDetais;
-  arrivalDetails: JourneyDetais;
+  returnDetails: JourneyDetais;
   price: string;
   offerType: string;
   availableSeatCount: string;

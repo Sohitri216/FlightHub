@@ -1,6 +1,5 @@
 import AIRPORT_DATA from "../../../../common/static/data/airports.json";
 import { useFlightList } from "../hooks/useFlightList";
-import { createDefaultDate } from "../../../../common/util";
 import { FlightIntenary, AirportData } from "../../../../types/types";
 
 export const FlightListingContainer = ({ render }: Props) => {
@@ -8,9 +7,9 @@ export const FlightListingContainer = ({ render }: Props) => {
   const { response, error, loading } = useFlightList({
     origin: "FRA",
     dest: "ROM",
-    departureDate: createDefaultDate(),
-    arrivalDate: createDefaultDate(),
-    service: "bestprice",
+    departureDate: "2023-08-15",
+    returnDate: "2023-08-30",
+    service: "amadeusBestPrice",
   });
 
   const createCountryWiseFlightDetails = (flightData: FlightIntenary[]) =>
@@ -28,7 +27,7 @@ export const FlightListingContainer = ({ render }: Props) => {
         const departureDetails = countryWiseIataCodeDetails.find(
           ({ code }) => code === origin
         );
-        const arrivalDetails = countryWiseIataCodeDetails.find(
+        const returnDetails = countryWiseIataCodeDetails.find(
           (each: AirportData) => each.code === destination
         );
 
@@ -38,13 +37,13 @@ export const FlightListingContainer = ({ render }: Props) => {
             country: departureDetails?.country || "",
             airport: departureDetails?.name || "",
             iataCode: origin,
-            date: departureDate,
+            date: departureDate.split("-").reverse().join("-"),
           },
-          arrivalDetails: {
-            country: arrivalDetails?.country || "",
-            airport: arrivalDetails?.name || "",
+          returnDetails: {
+            country: returnDetails?.country || "",
+            airport: returnDetails?.name || "",
             iataCode: destination,
-            date: returnDate,
+            date: returnDate.split("-").reverse().join("-"),
           },
           price,
           offerType,

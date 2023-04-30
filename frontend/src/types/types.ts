@@ -16,7 +16,7 @@ export type FlightParamProps = {
   origin: string;
   dest: string;
   departureDate?: string;
-  arrivalDate?: string;
+  returnDate?: string;
   service?: string;
 };
 
@@ -28,7 +28,7 @@ export type FlightDetailsType = {
     iataCode: string;
     date: string;
   };
-  arrivalDetails: {
+  returnDetails: {
     country: string;
     airport: string;
     iataCode: string;

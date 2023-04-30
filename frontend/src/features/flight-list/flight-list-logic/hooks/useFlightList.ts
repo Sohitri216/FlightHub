@@ -12,7 +12,7 @@ export const useFlightList = ({
   origin,
   dest,
   departureDate,
-  arrivalDate,
+  returnDate,
   service,
 }: FlightParamProps): FlightInventoryData => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -32,7 +32,7 @@ export const useFlightList = ({
         url: baseConfig.baseUrl + `/${origin}/${dest}`,
         params: {
           departureDate: departureDate,
-          returnDate: arrivalDate,
+          returnDate: returnDate,
           service: service,
         },
       })
