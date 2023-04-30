@@ -27,7 +27,7 @@ export const FlightListingPage = () => {
 
         return (
           <LayoutTemplate
-            title={<div>Welcome to Flighthub</div>}
+            title={<>FlightHub</>}
             filter={
               <FlightFilter
                 options={flightFilterOptions}

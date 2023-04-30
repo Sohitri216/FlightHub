@@ -7,6 +7,7 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
+  Divider,
 } from "@mui/material";
 
 export const SelectDropdown = ({ label, options, selectedOption }: Props) => {
@@ -18,7 +19,7 @@ export const SelectDropdown = ({ label, options, selectedOption }: Props) => {
   };
   return (
     <>
-      <Box sx={{ minWidth: 120 }}>
+      <S.BoxWrapper>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">{label}</InputLabel>
           <Select
@@ -28,6 +29,9 @@ export const SelectDropdown = ({ label, options, selectedOption }: Props) => {
             label={label}
             onChange={handleChange}
           >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
             {options?.map((option, index) => (
               <MenuItem key={index} value={option}>
                 {option}
@@ -35,7 +39,7 @@ export const SelectDropdown = ({ label, options, selectedOption }: Props) => {
             ))}
           </Select>
         </FormControl>
-      </Box>
+      </S.BoxWrapper>
     </>
   );
 };

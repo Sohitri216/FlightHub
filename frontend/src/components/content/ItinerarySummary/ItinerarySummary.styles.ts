@@ -16,15 +16,10 @@ export const Section = Mstyled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     width: "9.375rem",
   },
+  [theme.breakpoints.up("lg")]: {
+    width: "15rem",
+  },
 }));
-// export const Section = styled("div")`
-//   display: flex;
-//   flex-direction: row;
-//   gap: 0.25rem;
-//   align-items: center;
-//   width: 9.375rem;
-
-// `;
 
 export const ItineraryCode = styled("div")<{ type?: string }>`
   ${(props) =>
@@ -52,17 +47,19 @@ export const Offer = styled("div")`
 export const JourneyDetailsWrapper = styled("div")``;
 export const JourneyDetails = styled("div")``;
 
-export const JourneyRouteBlock = styled("div")`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
 
-export const Test = styled('div')`
-  
+export const JourneyRouteBlock = Mstyled("div")(({ theme }) => ({
+  display: "flex",
+  [theme.breakpoints.up("md")]: {
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+  [theme.breakpoints.up("lg")]: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: "0.25rem",
+  },
+}));
 
-`;
-export const AnotherTest = styled('div')`
-  
-
-`;
+export const Test = styled("div")``;
+export const AnotherTest = styled("div")``;

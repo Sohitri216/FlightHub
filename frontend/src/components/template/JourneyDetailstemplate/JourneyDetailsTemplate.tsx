@@ -15,9 +15,9 @@ export const JourneyDetailsTemplate = ({
         <CalendarMonth />
         <S.Label>{date}</S.Label>
       </S.Section>
-      <S.Section>
+      <S.Section >
         <Flight />
-        <S.Label>
+        <S.Label type="airport">
           {airport} ({iataCode})
         </S.Label>
       </S.Section>

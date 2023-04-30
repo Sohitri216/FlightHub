@@ -1,7 +1,7 @@
-import { FlightItinerary } from "../../../../types/types";
+import { FlightDetailsType, FlightItinerary } from "../../../../types/types";
 
 export const createFilterData = (
-  flightList: FlightItinerary[]
+  flightList: FlightDetailsType[]
 ): FilterOptionsType => {
   const filterItems = {
     originOptions: [],
@@ -11,19 +11,27 @@ export const createFilterData = (
   const filterOptions = flightList.reduce(
     (
       acc: { originOptions: string[]; returnOptions: string[] },
-      eachItem: FlightItinerary
-    ): any => {
+      { depatureDetails, returnDetails }: FlightDetailsType
+    ): FilterOptionsType => {
       const matchedOrigin = acc.originOptions.find(
-          (each) => each === eachItem.origin
+          (each) =>
+            each === depatureDetails.airport + ` (${depatureDetails.iataCode})`
         ),
         matchedDestination = acc.returnOptions.find(
-          (each) => each === eachItem.destination
+          (each) =>
+            each === returnDetails.airport + ` (${returnDetails.iataCode})`
         );
       if (!matchedOrigin) {
-        acc.originOptions = [...acc.originOptions, eachItem.origin];
+        acc.originOptions = [
+          ...acc.originOptions,
+          depatureDetails.airport + ` (${depatureDetails.iataCode})`,
+        ];
       }
       if (!matchedDestination) {
-        acc.returnOptions = [...acc.returnOptions, eachItem.destination];
+        acc.returnOptions = [
+          ...acc.returnOptions,
+          returnDetails.airport + ` (${returnDetails.iataCode})`,
+        ];
       }
       return acc;
     },

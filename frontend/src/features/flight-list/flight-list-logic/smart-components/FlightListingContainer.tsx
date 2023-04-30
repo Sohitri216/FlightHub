@@ -1,9 +1,14 @@
 import AIRPORT_DATA from "../../../../common/static/data/airports.json";
 import { useFlightList } from "../hooks/api/useFlightList";
-import { FlightItinerary, AirportData } from "../../../../types/types";
+import {
+  FlightItinerary,
+  AirportData,
+  FlightDetailsType,
+} from "../../../../types/types";
 import { createFilterData } from "../util/createFilterData";
 
 export const FlightListingContainer = ({ render }: Props) => {
+  let flightListElems: FlightDetailsType[] = [];
   const countryWiseIataCodeDetails: AirportData[] = AIRPORT_DATA;
   const { response, error, loading } = useFlightList({
     origin: "FRA",
@@ -59,10 +64,13 @@ export const FlightListingContainer = ({ render }: Props) => {
   if (error) {
     return <div>Err! Please try again</div>;
   }
+  if (response) {
+    flightListElems = createCountryWiseFlightDetails(response);
+  }
 
   return render({
-    flightList: response?.length && createCountryWiseFlightDetails(response),
-    flightFilterOptions: response?.length && createFilterData(response)
+    flightList: flightListElems,
+    flightFilterOptions: createFilterData(flightListElems),
   });
 };
 
