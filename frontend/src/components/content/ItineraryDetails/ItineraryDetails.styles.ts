@@ -1,6 +1,4 @@
-import { blueGrey, red } from "@mui/material/colors";
-import styled, { css } from "styled-components";
-import { styled as Mstyled } from "@mui/material/styles";
+import styled from "styled-components";
 
 export const JourneyDetailsWrapper = styled("div")`
   display: flex;

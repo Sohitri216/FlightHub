@@ -14,7 +14,7 @@ export const Section = styled("div")`
   align-items: center;
 `;
 
-export const ItenaryCode = styled("div")<{ type?: string }>`
+export const ItineraryCode = styled("div")<{ type?: string }>`
   ${(props) =>
     props.type === "airport" &&
     css`

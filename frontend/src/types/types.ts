@@ -1,4 +1,4 @@
-export type FlightIntenary = {
+export type FlightItinerary = {
   uuid: string;
   origin: string;
   destination: string;
@@ -43,7 +43,7 @@ export type FlightDetailsType = {
 };
 
 export type FlightInventoryList = {
-  data: FlightIntenary[];
+  data: FlightItinerary[];
   status: number;
 };
 
@@ -53,7 +53,7 @@ export type ErrorData = {
 };
 
 export type FlightInventoryData = {
-  response?: FlightIntenary[];
+  response?: FlightItinerary[];
   error?: ErrorData;
   loading: boolean;
 };
@@ -77,4 +77,9 @@ export type AirportData = {
   icao: string;
   direct_flights: string;
   carriers: string;
+};
+
+export type FilterOptionsType = {
+  originOptions: string[];
+  returnOptions: string[];
 };

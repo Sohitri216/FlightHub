@@ -3,8 +3,8 @@ import { FlightDetailsType } from "../../../types/types";
 import * as S from "./FlightList.styles";
 
 import { formatCurrency, formatText } from "../../../common/util";
-import { ItenaryDetails } from "../IternaryDetails/ItenaryDetails";
-import { ItenarySummary } from "../ItenarySummary/ItenarySummary";
+import { ItineraryDetails } from "../ItineraryDetails/ItineraryDetails";
+import { ItinerarySummary } from "../ItinerarySummary/ItinerarySummary";
 
 export const FlightDetails = ({ flightList }: Props) => {
   return (
@@ -21,7 +21,7 @@ export const FlightDetails = ({ flightList }: Props) => {
           <S.FlightInfoContainer key={uuid}>
             <Accordion
               summary={
-                <ItenarySummary
+                <ItinerarySummary
                   depatureDetails={depatureDetails}
                   returnDetails={returnDetails}
                   price={formatCurrency(price)}
@@ -30,7 +30,7 @@ export const FlightDetails = ({ flightList }: Props) => {
                 />
               }
               details={
-                <ItenaryDetails
+                <ItineraryDetails
                   depatureDetails={depatureDetails}
                   returnDetails={returnDetails}
                   availableSeatCount={seatAvailability}

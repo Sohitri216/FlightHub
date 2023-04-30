@@ -1,4 +1,4 @@
-import * as S from "./ItenrayDetails.styles";
+import * as S from "./ItineraryDetails.styles";
 import {
   CalendarMonth,
   Flight,
@@ -7,7 +7,7 @@ import {
 import { useBreakpoint } from "../../../common/hooks/useBreakpoint";
 import { SeatLayout } from "../../template/SeatLayout/SeatLayout";
 
-export const ItenaryDetails = ({
+export const ItineraryDetails = ({
   availableSeatCount,
   depatureDetails: {
     airport: departureAirport,

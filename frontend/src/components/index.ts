@@ -4,8 +4,8 @@ export * from './base/Accordion/Accordion';
 //Content
 export * from "./content/FlightList/FlightList";
 export * from './content/FlightFilter/FlightFilter';
-export * from './content/IternaryDetails/ItenaryDetails';
-export * from './content/ItenarySummary/ItenarySummary';
+export * from './content/ItineraryDetails/ItineraryDetails';
+export * from './content/ItinerarySummary/ItinerarySummary';
 
 //Layouts
 export * from './template/LayoutTemplate/LayoutTemplate';

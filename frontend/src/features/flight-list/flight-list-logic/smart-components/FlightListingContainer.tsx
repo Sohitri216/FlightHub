@@ -1,6 +1,7 @@
 import AIRPORT_DATA from "../../../../common/static/data/airports.json";
-import { useFlightList } from "../hooks/useFlightList";
-import { FlightIntenary, AirportData } from "../../../../types/types";
+import { useFlightList } from "../hooks/api/useFlightList";
+import { FlightItinerary, AirportData } from "../../../../types/types";
+import { createFilterData } from "../util/createFilterData";
 
 export const FlightListingContainer = ({ render }: Props) => {
   const countryWiseIataCodeDetails: AirportData[] = AIRPORT_DATA;
@@ -12,7 +13,7 @@ export const FlightListingContainer = ({ render }: Props) => {
     service: "amadeusBestPrice",
   });
 
-  const createCountryWiseFlightDetails = (flightData: FlightIntenary[]) =>
+  const createCountryWiseFlightDetails = (flightData: FlightItinerary[]) =>
     flightData.map(
       ({
         uuid,
@@ -23,7 +24,7 @@ export const FlightListingContainer = ({ render }: Props) => {
         price,
         offerType,
         seatAvailability,
-      }: FlightIntenary) => {
+      }: FlightItinerary) => {
         const departureDetails = countryWiseIataCodeDetails.find(
           ({ code }) => code === origin
         );
@@ -61,6 +62,7 @@ export const FlightListingContainer = ({ render }: Props) => {
 
   return render({
     flightList: response?.length && createCountryWiseFlightDetails(response),
+    flightFilterOptions: response?.length && createFilterData(response)
   });
 };
 

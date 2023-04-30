@@ -1,26 +1,26 @@
-import { FlightLand, FlightTakeoff } from "@mui/icons-material";
+import { FlightTakeoff } from "@mui/icons-material";
 import { useBreakpoint } from "../../../common/hooks/useBreakpoint";
 import { SeatLayout } from "../../template/SeatLayout/SeatLayout";
-import * as S from "./ItenarySummary.styles";
+import * as S from "./ItinerarySummary.styles";
 
-export const ItenarySummary = ({
+export const ItinerarySummary = ({
   depatureDetails: { iataCode: departureIataCode, airport: departureAirport },
   returnDetails: { iataCode: returnIataCode, airport: returnAirport },
   availableSeatCount,
   price,
   offerType,
-}: ItenaryType) => {
+}: ItineraryType) => {
   const breakpoint = useBreakpoint();
 
   const DisplayJourneyRoute = ({ iataCode, airport }: JourneyRoute) => {
     return breakpoint === "lg" || breakpoint === "xlg" ? (
       <S.JourneyRouteBlock>
-        <S.ItenaryCode>{iataCode}</S.ItenaryCode>
-        <S.ItenaryCode type="airport">({airport})</S.ItenaryCode>
+        <S.ItineraryCode>{iataCode}</S.ItineraryCode>
+        <S.ItineraryCode type="airport">({airport})</S.ItineraryCode>
       </S.JourneyRouteBlock>
     ) : (
       <S.Section>
-        <S.ItenaryCode>{iataCode}</S.ItenaryCode>
+        <S.ItineraryCode>{iataCode}</S.ItineraryCode>
       </S.Section>
     );
   };
@@ -41,11 +41,13 @@ export const ItenarySummary = ({
           airport={returnAirport}
         />
       </S.Section>
-      <S.Section>
-        {(breakpoint === "lg" || breakpoint === "xlg") && (
+
+      {(breakpoint === "lg" || breakpoint === "xlg") && (
+        <S.Section>
           <SeatLayout availableSeatCount={availableSeatCount} />
-        )}
-      </S.Section>
+        </S.Section>
+      )}
+
       <S.OfferPrice>
         <S.Price>{price}</S.Price>
         <S.Offer>{offerType} offer</S.Offer>
@@ -60,7 +62,7 @@ type JourneyDetais = {
   date: string;
 };
 
-type ItenaryType = {
+type ItineraryType = {
   depatureDetails: JourneyDetais;
   returnDetails: JourneyDetais;
   price: string;

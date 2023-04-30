@@ -6,8 +6,8 @@ import {
   FlightInventoryList,
   ErrorData,
   FlightInventoryData,
-  FlightIntenary,
-} from "../../../../types/types";
+  FlightItinerary,
+} from "../../../../../types/types";
 export const useFlightList = ({
   origin,
   dest,
@@ -16,7 +16,7 @@ export const useFlightList = ({
   service,
 }: FlightParamProps): FlightInventoryData => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [response, setResponse] = useState<FlightIntenary[]>([]);
+  const [response, setResponse] = useState<FlightItinerary[]>([]);
   const [error, setError] = useState<ErrorData>();
 
   const baseConfig: Params = {
