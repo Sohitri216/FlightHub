@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
   FallbackTemplate,
-  FlightDetails,
+  FlightList,
   FlightFilter,
   LayoutTemplate,
   LoadingOverlay,
@@ -42,8 +42,8 @@ export const FlightListingPage = () => {
                 }
               />
             }
-            flightList={
-              <FlightDetails
+            main={
+              <FlightList
                 flightList={createMatchedList(flightList, filterParams) || []}
               />
             }

@@ -1,13 +1,11 @@
 import * as S from "./SelectDropdown.styles";
 import { useState } from "react";
 import {
-  Box,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
   SelectChangeEvent,
-  Divider,
 } from "@mui/material";
 
 export const SelectDropdown = ({ label, options, selectedOption }: Props) => {

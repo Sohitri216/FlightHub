@@ -7,40 +7,44 @@ import { ItineraryDetails } from "../ItineraryDetails/ItineraryDetails";
 import { ItinerarySummary } from "../ItinerarySummary/ItinerarySummary";
 import { FallbackTemplate } from "../../template/FallbackTemplate/FallbackTemplate";
 
-export const FlightDetails = ({ flightList }: Props) => {
+export const FlightList = ({ flightList }: Props) => {
   return (
     <S.Wrapper count={!!flightList?.length}>
-      {flightList.length ? flightList.map(
-        ({
-          uuid,
-          price,
-          depatureDetails,
-          returnDetails,
-          offerType,
-          seatAvailability,
-        }: FlightDetailsType) => (
-          <S.FlightInfoContainer key={uuid}>
-            <Accordion
-              summary={
-                <ItinerarySummary
-                  depatureDetails={depatureDetails}
-                  returnDetails={returnDetails}
-                  price={formatCurrency(price)}
-                  offerType={formatText(offerType)}
-                  availableSeatCount={seatAvailability}
-                />
-              }
-              details={
-                <ItineraryDetails
-                  depatureDetails={depatureDetails}
-                  returnDetails={returnDetails}
-                  availableSeatCount={seatAvailability}
-                />
-              }
-            />
-          </S.FlightInfoContainer>
+      {flightList.length ? (
+        flightList.map(
+          ({
+            uuid,
+            price,
+            depatureDetails,
+            returnDetails,
+            offerType,
+            seatAvailability,
+          }: FlightDetailsType) => (
+            <S.FlightInfoContainer key={uuid} data-testid="flight-item-list">
+              <Accordion
+                summary={
+                  <ItinerarySummary
+                    depatureDetails={depatureDetails}
+                    returnDetails={returnDetails}
+                    price={formatCurrency(price)}
+                    offerType={formatText(offerType)}
+                    availableSeatCount={seatAvailability}
+                  />
+                }
+                details={
+                  <ItineraryDetails
+                    depatureDetails={depatureDetails}
+                    returnDetails={returnDetails}
+                    availableSeatCount={seatAvailability}
+                  />
+                }
+              />
+            </S.FlightInfoContainer>
+          )
         )
-      ): <FallbackTemplate displayMessage="No results found for this route"/>}
+      ) : (
+        <FallbackTemplate displayMessage="No results found for this route" />
+      )}
     </S.Wrapper>
   );
 };
