@@ -1,68 +1,30 @@
-import AIRPORT_DATA from "../../../../common/static/data/airports.json";
 import { useFlightList } from "../hooks/api/useFlightList";
-import {
-  FlightItinerary,
-  AirportData,
-  FlightDetailsType,
-} from "../../../../types/types";
-import { createFilterData } from "../util/createFilterData";
+import { FlightDetailsType } from "../../../../types/types";
+import { createFilterData } from "../helpers/createFilterData";
+import { createCountryWiseFlightDetails } from "../helpers/createCountryWiseFlightDetails";
 
-export const FlightListingContainer = ({ render }: Props) => {
+export const FlightListingContainer = ({
+  render,
+  renderLoading,
+  renderError,
+}: Props) => {
   let flightListElems: FlightDetailsType[] = [];
-  const countryWiseIataCodeDetails: AirportData[] = AIRPORT_DATA;
-  const { response, error, loading } = useFlightList({
+
+  const payloadData = {
     origin: "FRA",
     dest: "ROM",
     departureDate: "2023-08-15",
     returnDate: "2023-08-30",
     service: "amadeusBestPrice",
-  });
+  };
 
-  const createCountryWiseFlightDetails = (flightData: FlightItinerary[]) =>
-    flightData.map(
-      ({
-        uuid,
-        origin,
-        destination,
-        departureDate,
-        returnDate,
-        price,
-        offerType,
-        seatAvailability,
-      }: FlightItinerary) => {
-        const departureDetails = countryWiseIataCodeDetails.find(
-          ({ code }) => code === origin
-        );
-        const returnDetails = countryWiseIataCodeDetails.find(
-          (each: AirportData) => each.code === destination
-        );
-
-        return {
-          uuid,
-          depatureDetails: {
-            country: departureDetails?.country || "",
-            airport: departureDetails?.name || "",
-            iataCode: origin,
-            date: departureDate.split("-").reverse().join("-"),
-          },
-          returnDetails: {
-            country: returnDetails?.country || "",
-            airport: returnDetails?.name || "",
-            iataCode: destination,
-            date: returnDate.split("-").reverse().join("-"),
-          },
-          price,
-          offerType,
-          seatAvailability,
-        };
-      }
-    );
+  const { response, error, loading } = useFlightList(payloadData);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return renderLoading;
   }
   if (error) {
-    return <div>Err! Please try again</div>;
+    return renderError;
   }
   if (response) {
     flightListElems = createCountryWiseFlightDetails(response);
@@ -76,4 +38,6 @@ export const FlightListingContainer = ({ render }: Props) => {
 
 type Props = {
   render: (props: any) => JSX.Element;
+  renderLoading: JSX.Element;
+  renderError: JSX.Element;
 };

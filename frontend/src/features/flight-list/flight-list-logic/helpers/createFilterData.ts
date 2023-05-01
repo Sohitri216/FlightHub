@@ -1,4 +1,4 @@
-import { FlightDetailsType, FlightItinerary } from "../../../../types/types";
+import { FlightDetailsType } from "../../../../types/types";
 
 export const createFilterData = (
   flightList: FlightDetailsType[]

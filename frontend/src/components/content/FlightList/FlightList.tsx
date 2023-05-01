@@ -5,11 +5,12 @@ import * as S from "./FlightList.styles";
 import { formatCurrency, formatText } from "../../../common/util";
 import { ItineraryDetails } from "../ItineraryDetails/ItineraryDetails";
 import { ItinerarySummary } from "../ItinerarySummary/ItinerarySummary";
+import { FallbackTemplate } from "../../template/FallbackTemplate/FallbackTemplate";
 
 export const FlightDetails = ({ flightList }: Props) => {
   return (
-    <S.Wrapper>
-      {flightList?.map(
+    <S.Wrapper count={!!flightList?.length}>
+      {flightList.length ? flightList.map(
         ({
           uuid,
           price,
@@ -39,7 +40,7 @@ export const FlightDetails = ({ flightList }: Props) => {
             />
           </S.FlightInfoContainer>
         )
-      )}
+      ): <FallbackTemplate displayMessage="No results found for this route"/>}
     </S.Wrapper>
   );
 };

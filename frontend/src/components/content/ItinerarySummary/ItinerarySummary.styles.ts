@@ -17,7 +17,7 @@ export const Section = Mstyled("div")(({ theme }) => ({
     width: "9.375rem",
   },
   [theme.breakpoints.up("lg")]: {
-    width: "15rem",
+    width: "16rem",
   },
 }));
 

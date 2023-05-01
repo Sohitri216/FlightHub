@@ -1,16 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { styled as Mstyled } from "@mui/system";
 
-export const Label = styled("div")<{ type?: string }>`
-  ${(props) =>
-    props.type === "airport" &&
-    css`
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    `}
-`;
+export const Label = styled("div")``;
 export const HeadingLabel = styled("div")`
   color: #555;
   font-weight: bold;
@@ -19,13 +10,15 @@ export const Section = styled("div")`
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
-
-  /* height: 100%; */
 `;
 
-export const JourneyDetails = styled("div")`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: calc(50% - 1rem);
-`;
+export const JourneyDetails = Mstyled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+  width: "100%",
+  [theme.breakpoints.up("md")]: {
+    flexDirection: "column",
+    width: "calc(50% - 1rem)",
+  },
+}));

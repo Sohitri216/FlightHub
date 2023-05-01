@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import {
+  FallbackTemplate,
   FlightDetails,
   FlightFilter,
   LayoutTemplate,
+  LoadingOverlay,
 } from "../../../../components";
 import { FilterOptionsType, FlightDetailsType } from "../../../../types/types";
 import { FlightListingContainer } from "../../flight-list-logic/smart-components/FlightListingContainer";
-import { createMatchedList } from "../../flight-list-logic/util/createMatchedList";
+import { createMatchedList } from "../../flight-list-logic/helpers/createMatchedList";
 
 export const FlightListingPage = () => {
   const [filterParams, setFilterParams] = useState<FilterOptionType>({
@@ -16,6 +18,10 @@ export const FlightListingPage = () => {
   });
   return (
     <FlightListingContainer
+      renderLoading={<LoadingOverlay />}
+      renderError={
+        <FallbackTemplate displayMessage={"Network Error! Please try again."} />
+      }
       render={({ flightList, flightFilterOptions }: FlightListingType) => {
         const selectedFilterOption = (item: any, label: any) => {
           setFilterParams({

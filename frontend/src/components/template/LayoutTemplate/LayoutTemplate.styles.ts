@@ -6,9 +6,12 @@ export const LayoutContainer = styled("div")`
   padding-bottom: 1rem;
 `;
 
-export const FlightListingContainer = styled("div")``;
+export const FlightListingContainer = styled("div")`
+  font-family: "Open Sans", sans-serif;
+`;
 
 export const FilterContainer = styled("div")`
+  font-family: "Open Sans", sans-serif;
   margin: 1rem 0rem;
   padding: 0.5rem 1rem;
   background: rgb(244, 244, 248);
@@ -26,4 +29,3 @@ export const Header = styled("div")`
   padding: 1rem;
 `;
 export const HeaderTitle = styled("div")``;
-export const HeaderSubtitle = styled("div")``;

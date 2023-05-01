@@ -17,7 +17,7 @@ export const JourneyDetailsTemplate = ({
       </S.Section>
       <S.Section >
         <Flight />
-        <S.Label type="airport">
+        <S.Label>
           {airport} ({iataCode})
         </S.Label>
       </S.Section>

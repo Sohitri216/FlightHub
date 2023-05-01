@@ -35,7 +35,3 @@ type JourneyType = {
   returnDetails: JourneyDetais;
   availableSeatCount: string;
 };
-
-type JourneyProps = JourneyDetais & {
-  journeyType: string;
-};

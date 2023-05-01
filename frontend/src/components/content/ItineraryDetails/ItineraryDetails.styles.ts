@@ -29,26 +29,3 @@ export const FlightSeat = styled("div")`
 export const Icon = styled("div")``;
 export const AvailableCount = styled("div")``;
 
-// export const JourneyWrapper = Mstyled("div")(({ theme }) => ({
-//   fontSize: "0.875rem",
-//   display: "grid",
-//   // gridGap: "1rem",
-//   // display: grid;
-//   // grid-gap: 1rem;
-//   [theme.breakpoints.down("md")]: {
-//     gridTemplateColumns: 'repeat(1, 1fr)',
-//     gridGap: "0.5rem",
-//   },
-//   [theme.breakpoints.up("md")]: {
-//     gridTemplateColumns: 'repeat(3, 1fr)',
-//     gridGap: "0.5rem",
-//   },
-//   [theme.breakpoints.up("lg")]: {
-//     gridTemplateColumns: 'repeat(4, 1fr)',
-//     gridGap: "0.5rem",
-//   },
-//   [theme.breakpoints.up("lg")]: {
-//     gridTemplateColumns: 'repeat(5, 1fr)',
-//     gridGap: "0.5rem",
-//   },
-// }));
