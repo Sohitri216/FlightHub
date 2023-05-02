@@ -9,9 +9,9 @@ export const ItineraryDetails = ({
   returnDetails,
 }: JourneyType) => {
   const breakpoint = useBreakpoint();
-
+  console.log('bp:', breakpoint);
   return (
-    <S.JourneyDetailsWrapper>
+    <S.JourneyDetailsWrapper data-testid="journey-details">
       {breakpoint === "md" && (
         <SeatLayout availableSeatCount={availableSeatCount} />
       )}

@@ -10,17 +10,25 @@ export const Accordion = ({ summary, details }: Props) => {
     setExpanded(!expanded);
   };
   return (
-    <S.Wrapper>
-      <MAccordion id="accordion">
-        <S.AccordionLabel
-          expandIcon={expanded ? <RemoveIcon /> : <AddIcon />}
-          onClick={handleClick}
-        >
-          {summary}
-        </S.AccordionLabel>
-        <S.AccordionContent>{details}</S.AccordionContent>
-      </MAccordion>
-    </S.Wrapper>
+    <MAccordion id="accordion">
+      <S.AccordionLabel
+        data-testid="accordion-label"
+        expandIcon={
+          expanded ? (
+            <RemoveIcon data-testid="expanded" />
+          ) : (
+            <AddIcon data-testid="collapsed" />
+          )
+        }
+        onClick={handleClick}
+      >
+        {summary}
+      </S.AccordionLabel>
+
+      <S.AccordionContent data-testid="accordion-details">
+        {details}
+      </S.AccordionContent>
+    </MAccordion>
   );
 };
 

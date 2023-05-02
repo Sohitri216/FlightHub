@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-export const useBreakpoint = () => {
+export const useBreakpoint = (): string => {
   const theme = useTheme();
   let screenSize;
   const md = useMediaQuery(theme.breakpoints.between("sm", "md"));

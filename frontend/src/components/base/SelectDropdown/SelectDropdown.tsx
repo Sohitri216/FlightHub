@@ -16,29 +16,31 @@ export const SelectDropdown = ({ label, options, selectedOption }: Props) => {
     selectedOption(event.target.value, label);
   };
   return (
-    <>
-      <S.BoxWrapper>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">{label}</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={journeyRoute}
-            label={label}
-            onChange={handleChange}
-          >
-            <MenuItem value="">
-              <em>None</em>
+    <S.BoxWrapper>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label" data-testid="dd-select-label">
+          {label}
+        </InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          inputProps={{ "data-testid": "dd-select-element" }}
+          // data-testid="dd-select-element"
+          value={journeyRoute}
+          label={label}
+          onChange={handleChange}
+        >
+          <MenuItem value="" data-testid="menu-items">
+            <em>None</em>
+          </MenuItem>
+          {options?.map((option, index) => (
+            <MenuItem data-testid="menu-items" key={index} value={option}>
+              {option}
             </MenuItem>
-            {options?.map((option, index) => (
-              <MenuItem key={index} value={option}>
-                {option}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </S.BoxWrapper>
-    </>
+          ))}
+        </Select>
+      </FormControl>
+    </S.BoxWrapper>
   );
 };
 

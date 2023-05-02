@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const LayoutContainer = styled("div")`
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
 `;
 
 export const FlightListingContainer = styled("div")`
   font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  background: #f4f4f8;
 `;
 
 export const FilterContainer = styled("div")`

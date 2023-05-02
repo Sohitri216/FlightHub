@@ -9,7 +9,7 @@ import { FallbackTemplate } from "../../template/FallbackTemplate/FallbackTempla
 
 export const FlightList = ({ flightList }: Props) => {
   return (
-    <S.Wrapper count={!!flightList?.length}>
+    <S.Wrapper>
       {flightList.length ? (
         flightList.map(
           ({
