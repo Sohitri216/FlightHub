@@ -32,7 +32,7 @@
             "destination": "FUK",
             "departureDate": "2023-08-15",
             "returnDate": "2023-08-30",
-            "seatAvailability": "8",
+            "seatAvailability": "0",
             "price": {
                 "amount": "400",
                 "currency": "EUR"
@@ -69,6 +69,19 @@
             "uuid": "",
             "origin": "FRA",
             "destination": "DTM",
+            "departureDate": "2023-08-15",
+            "returnDate": "2023-08-30",
+            "seatAvailability": "114",
+            "price": {
+                "amount": "40",
+                "currency": "EUR"
+            },
+            "offerType": "BestPrice"
+        },
+        {
+            "uuid": "",
+            "origin": "DEL",
+            "destination": "CCU",
             "departureDate": "2023-08-15",
             "returnDate": "2023-08-30",
             "seatAvailability": "114",
