@@ -2,6 +2,7 @@ import { useFlightList } from "../hooks/api/useFlightList";
 import { FlightDetailsType } from "../../../../types/types";
 import { createFilterData } from "../helpers/createFilterData";
 import { createCountryWiseFlightDetails } from "../helpers/createCountryWiseFlightDetails";
+import { FlightListingType } from "../../flight-list-ui/pages/FlightListingPage";
 
 export const FlightListingContainer = ({
   render,
@@ -37,7 +38,7 @@ export const FlightListingContainer = ({
 };
 
 type Props = {
-  render: (props: any) => JSX.Element;
+  render: (props: FlightListingType) => JSX.Element;
   renderLoading: JSX.Element;
   renderError: JSX.Element;
 };

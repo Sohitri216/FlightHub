@@ -24,5 +24,5 @@ export const FlightFilter = ({
 
 type Props = {
   options: FilterOptionsType;
-  selectedOption: (...args: any) => void;
+  selectedOption: (item: string, label: string) => void;
 };
