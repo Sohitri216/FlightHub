@@ -1,21 +1,30 @@
-import { CheckCircleRounded } from "@mui/icons-material";
+import { CheckCircleRounded, Lock } from "@mui/icons-material";
 import * as S from "./SeatLayout.styles";
 
-export const SeatLayout = ({
-  availableSeatCount,
-  displayInSummary,
-}: FlightSeat) => {
+export const SeatLayout = ({ availableSeatCount }: FlightSeat) => {
   return (
     <S.FlightSeat>
-      <S.Icon>
-        <CheckCircleRounded sx={{ fontSize: displayInSummary ? '0.875rem' : '1.125rem' }} />
-      </S.Icon>
-      <S.AvailableCount>{availableSeatCount} Available Seats</S.AvailableCount>
+      {Number(availableSeatCount) > 0 ? (
+        <S.SeatAvailableSection data-testid="available-section">
+          <S.Icon>
+            <CheckCircleRounded />
+          </S.Icon>
+          <S.AvailableCount data-testid="seat-count">
+            {availableSeatCount} Available Seats
+          </S.AvailableCount>
+        </S.SeatAvailableSection>
+      ) : (
+        <S.BookedSection data-testid="booked">
+          <S.Icon>
+            <Lock />
+          </S.Icon>
+          <S.AvailableCount>Fully Booked</S.AvailableCount>
+        </S.BookedSection>
+      )}
     </S.FlightSeat>
   );
 };
 
 type FlightSeat = {
   availableSeatCount: string;
-  displayInSummary?: boolean;
 };

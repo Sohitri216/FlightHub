@@ -14,7 +14,7 @@ export const Section = Mstyled("div")(({ theme }) => ({
   gap: "0.25rem",
   alignItems: "center",
   [theme.breakpoints.up("md")]: {
-    width: "9.375rem",
+    width: "11.375rem",
   },
   [theme.breakpoints.up("lg")]: {
     width: "16rem",
@@ -46,7 +46,6 @@ export const Offer = styled("div")`
 
 export const JourneyDetailsWrapper = styled("div")``;
 export const JourneyDetails = styled("div")``;
-
 
 export const JourneyRouteBlock = Mstyled("div")(({ theme }) => ({
   display: "flex",

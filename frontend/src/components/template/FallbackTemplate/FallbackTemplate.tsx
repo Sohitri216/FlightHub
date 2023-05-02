@@ -2,7 +2,7 @@ import * as S from "./FallbackTemplate.styles";
 
 export const FallbackTemplate = ({ displayMessage }: Props) => {
   return (
-    <S.ErrorWrapper>
+    <S.ErrorWrapper data-testid="error-section">
       <S.Text>{displayMessage}</S.Text>
     </S.ErrorWrapper>
   );

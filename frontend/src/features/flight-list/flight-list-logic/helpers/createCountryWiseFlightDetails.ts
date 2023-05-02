@@ -24,15 +24,15 @@ export const createCountryWiseFlightDetails = (flightData: FlightItinerary[]) =>
       return {
         uuid,
         depatureDetails: {
-          country: departureDetails?.country || "",
-          airport: departureDetails?.name || "",
-          iataCode: origin,
+          country: departureDetails?.country || "-",
+          airport: departureDetails?.name || "-",
+          iataCode: origin || "-",
           date: departureDate.split("-").reverse().join("-"),
         },
         returnDetails: {
-          country: returnDetails?.country || "",
-          airport: returnDetails?.name || "",
-          iataCode: destination,
+          country: returnDetails?.country || "-",
+          airport: returnDetails?.name || "-",
+          iataCode: destination || "-",
           date: returnDate.split("-").reverse().join("-"),
         },
         price,

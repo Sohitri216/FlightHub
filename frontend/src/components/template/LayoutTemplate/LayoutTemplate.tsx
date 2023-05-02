@@ -6,12 +6,14 @@ export const LayoutTemplate = ({ title, filter, main }: Props) => {
   return (
     <Typography component={"div"}>
       <S.LayoutContainer>
-        <S.Header>
-          <AirplaneTicket style={{ fontSize: '2rem'}} />
+        <S.Header data-testid="title">
+          <AirplaneTicket style={{ fontSize: "2rem" }} />
           <S.HeaderTitle>{title}</S.HeaderTitle>
         </S.Header>
-        <S.FilterContainer>{filter}</S.FilterContainer>
-        <S.FlightListingContainer>{main}</S.FlightListingContainer>
+        <S.FilterContainer data-testid="filter">{filter}</S.FilterContainer>
+        <S.FlightListingContainer data-testid="main">
+          {main}
+        </S.FlightListingContainer>
       </S.LayoutContainer>
     </Typography>
   );

@@ -9,7 +9,7 @@ export const JourneyDetailsTemplate = ({
   country,
 }: JourneyProps) => {
   return (
-    <S.JourneyDetails>
+    <S.JourneyDetails data-testid="jouney-container">
       <S.HeadingLabel>{journeyType}</S.HeadingLabel>
       <S.Section>
         <CalendarMonth />

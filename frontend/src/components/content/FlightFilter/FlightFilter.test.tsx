@@ -10,7 +10,7 @@ const testProps = {
   selectedOption: () => jest.fn,
 };
 
-describe("<FlightList /> component should", () => {
+describe("<FlightFilter /> component should", () => {
   it("match its snapshot", () => {
     const view = renderWithTheme(<FlightFilter {...testProps} />);
     expect(view).toMatchSnapshot();

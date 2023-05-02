@@ -12,7 +12,7 @@ import { FlightListingContainer } from "../../flight-list-logic/smart-components
 import { createMatchedList } from "../../flight-list-logic/helpers/createMatchedList";
 
 export const FlightListingPage = () => {
-  const [filterParams, setFilterParams] = useState<FilterOptionType>({
+  const [filterParams, setFilterParams] = useState<SelectedFilterProps>({
     originValue: "",
     returnValue: "",
   });
@@ -23,7 +23,7 @@ export const FlightListingPage = () => {
         <FallbackTemplate displayMessage={"Network Error! Please try again."} />
       }
       render={({ flightList, flightFilterOptions }: FlightListingType) => {
-        const selectedFilterOption = (item: any, label: any) => {
+        const selectedFilterOption = (item: string, label: string) => {
           setFilterParams({
             ...filterParams,
             originValue: label === "Origin" ? item : filterParams.originValue,
@@ -54,12 +54,12 @@ export const FlightListingPage = () => {
   );
 };
 
-type FlightListingType = {
-  flightList: FlightDetailsType[];
-  flightFilterOptions: FilterOptionsType;
-};
-
-type FilterOptionType = {
+export type SelectedFilterProps = {
   originValue: string;
   returnValue: string;
+};
+
+export type FlightListingType = {
+  flightList: FlightDetailsType[];
+  flightFilterOptions: FilterOptionsType;
 };

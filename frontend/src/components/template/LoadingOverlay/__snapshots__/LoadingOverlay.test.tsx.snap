@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading OverLay /> component should match its snapshot 1`] = `undefined`;
