@@ -22,6 +22,7 @@ export const Section = Mstyled("div")(({ theme }) => ({
 }));
 
 export const ItineraryCode = styled("div")<{ type?: string }>`
+  word-wrap: break-word;
   ${(props) =>
     props.type === "airport" &&
     css`
@@ -59,6 +60,3 @@ export const JourneyRouteBlock = Mstyled("div")(({ theme }) => ({
     gap: "0.25rem",
   },
 }));
-
-export const Test = styled("div")``;
-export const AnotherTest = styled("div")``;
