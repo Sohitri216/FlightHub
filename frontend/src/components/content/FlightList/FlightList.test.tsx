@@ -20,7 +20,7 @@ const testProps = [
     },
     seatAvailability: "31",
     uuid: "0d8e125a-db32-432b-beba-db4f9520aa8b",
-  },
+  }
 ];
 
 jest.mock("../../base/Accordion/Accordion", () => {

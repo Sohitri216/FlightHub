@@ -1,9 +1,15 @@
-import { AirportData, FlightItinerary } from "../../../../types/types";
+import {
+  AirportData,
+  FlightDetailsType,
+  FlightItinerary,
+} from "../../../../types/types";
 import AIRPORT_DATA from "../../../../common/static/data/airports.json";
 const countryWiseIataCodeDetails: AirportData[] = AIRPORT_DATA;
 
-export const createCountryWiseFlightDetails = (flightData: FlightItinerary[]) =>
-  flightData.map(
+export const createCountryWiseFlightDetails = (
+  flightData: FlightItinerary[]
+): FlightDetailsType[] =>
+  flightData?.map(
     ({
       uuid,
       origin,

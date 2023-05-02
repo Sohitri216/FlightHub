@@ -6,12 +6,12 @@ describe("Format Item", () => {
       currency: "EUR",
       amount: "50.378",
     };
-    const test = formatCurrency(testProps);
-    expect(test).toEqual("€50.38");
+    const price = formatCurrency(testProps);
+    expect(price).toEqual("€50.38");
   });
 
   it("should format Pascal case with gap", () => {
-    const test = formatText("PascalCase");
-    expect(test).toEqual("Pascal Case")
+    const text = formatText("PascalCase");
+    expect(text).toEqual("Pascal Case")
   });
 });

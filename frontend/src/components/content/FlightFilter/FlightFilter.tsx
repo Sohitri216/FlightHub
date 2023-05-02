@@ -6,7 +6,6 @@ export const FlightFilter = ({
   options: { originOptions, returnOptions },
   selectedOption,
 }: Props) => {
-  console.log('SO:', selectedOption);
   return (
     <S.FilterContainer data-testid="flight-filter">
       <SelectDropdown

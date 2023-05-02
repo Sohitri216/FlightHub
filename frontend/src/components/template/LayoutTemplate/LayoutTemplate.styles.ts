@@ -7,7 +7,6 @@ export const LayoutContainer = styled("div")`
 
 export const FlightListingContainer = styled("div")`
   font-family: "Open Sans", sans-serif;
-  height: 100vh;
   background: #f4f4f8;
 `;
 
