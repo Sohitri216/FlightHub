@@ -4,6 +4,7 @@ export const createMatchedList = (
   flightList: FlightDetailsType[],
   { originValue, returnValue }: FilterOptionType
 ) => {
+  console.log('inside:');
   if (originValue === "" && returnValue === "") {
     return flightList;
   } else if (originValue !== "" && returnValue === "") {
