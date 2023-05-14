@@ -26,8 +26,8 @@ export const useFlightList = ({
   };
 
   const fetchFlightList = async () => {
-    await axios
-      .request({
+    try {
+      const response = await axios.request({
         ...baseConfig,
         url: baseConfig.baseUrl + `/${origin}/${dest}`,
         params: {
@@ -35,14 +35,13 @@ export const useFlightList = ({
           returnDate: returnDate,
           service: service,
         },
-      })
-      .then((response: FlightInventoryList) => {
-        setResponse(response?.data);
-      })
-      .catch((err: ErrorData) => {
-        setError(err);
-      })
-      .finally(() => setLoading(false));
+      });
+      setResponse(response?.data);
+    } catch (error: any) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
