@@ -4,24 +4,9 @@ export const createMatchedList = (
   flightList: FlightDetailsType[],
   { originValue, returnValue }: FilterOptionType
 ) => {
-  if (originValue === "" && returnValue === "") {
-    return flightList;
-  } else if (originValue !== "" && returnValue === "") {
-    return flightList.filter(
-      (eachItem) =>
-        eachItem.depatureDetails.airport +
-          ` (${eachItem.depatureDetails.iataCode})` ===
-        originValue
-    );
-  } else if (originValue === "" && returnValue !== "") {
-    return flightList.filter(
-      (eachItem) =>
-        eachItem.returnDetails.airport +
-          ` (${eachItem.returnDetails.iataCode})` ===
-        returnValue
-    );
-  } else {
-    return flightList.filter(
+  let result = flightList;
+  if (originValue && returnValue) {
+    result = flightList.filter(
       (eachItem) =>
         eachItem.depatureDetails.airport +
           ` (${eachItem.depatureDetails.iataCode})` ===
@@ -30,7 +15,22 @@ export const createMatchedList = (
           ` (${eachItem.returnDetails.iataCode})` ===
           returnValue
     );
+  } else if (originValue || returnValue) {
+    result = originValue
+      ? flightList.filter(
+          (eachItem) =>
+            eachItem.depatureDetails.airport +
+              ` (${eachItem.depatureDetails.iataCode})` ===
+            originValue
+        )
+      : flightList.filter(
+          (eachItem) =>
+            eachItem.returnDetails.airport +
+              ` (${eachItem.returnDetails.iataCode})` ===
+            returnValue
+        );
   }
+  return result;
 };
 
 type FilterOptionType = {
